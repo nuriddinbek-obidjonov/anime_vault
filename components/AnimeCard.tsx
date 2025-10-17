@@ -19,7 +19,7 @@ interface Prop {
 
 function AnimeCard({ anime }: Prop) {
   return (
-    <div className="max-w-sm rounded relative w-full">
+    <div className="relative rounded w-full max-w-sm">
       <div className="relative w-full h-[37vh]">
         <Image
           src={anime.image.original}
@@ -28,19 +28,19 @@ function AnimeCard({ anime }: Prop) {
           className="rounded-xl"
         />
       </div>
-      <div className="py-4 flex flex-col gap-3">
+      <div className="flex flex-col gap-3 py-4">
         <div className="flex justify-between items-center gap-1">
-          <h2 className="font-bold text-white text-xl line-clamp-1 w-full">
+          <h2 className="w-full font-bold text-white text-xl line-clamp-1">
             {anime.name}
           </h2>
-          <div className="py-1 px-2 bg-[#161921] rounded-sm">
-            <p className="text-white text-sm font-bold capitalize">
+          <div className="bg-[#161921] px-2 py-1 rounded-sm">
+            <p className="font-bold text-white text-sm capitalize">
               {anime.kind}
             </p>
           </div>
         </div>
-        <div className="flex gap-4 items-center">
-          <div className="flex flex-row gap-2 items-center">
+        <div className="flex items-center gap-4">
+          <div className="flex flex-row items-center gap-2">
             <Image
               src="./episodes.svg"
               alt="episodes"
@@ -48,11 +48,11 @@ function AnimeCard({ anime }: Prop) {
               height={20}
               className="object-contain"
             />
-            <p className="text-base text-white font-bold">
+            <p className="font-bold text-white text-base">
               {anime.episodes || anime.episodes_aired}
             </p>
           </div>
-          <div className="flex flex-row gap-2 items-center">
+          <div className="flex flex-row items-center gap-2">
             <Image
               src="./star.svg"
               alt="star"
@@ -60,7 +60,7 @@ function AnimeCard({ anime }: Prop) {
               height={18}
               className="object-contain"
             />
-            <p className="text-base font-bold text-[#FFAD49]">{anime.score}</p>
+            <p className="font-bold text-[#FFAD49] text-base">{anime.score}</p>
           </div>
         </div>
       </div>
